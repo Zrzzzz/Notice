@@ -9,10 +9,6 @@
 import UIKit
 
 class NoticeCell: UITableViewCell {
-    // 参数
-    var ddlTime: Int?
-    var rect = CGRect(x: 20, y: 20, width: screen.width - 40, height: screen.height - 40)
-    var bgColor: UIColor?
     // 组件
     var view: UIView!
     var courseLabel: UILabel!
@@ -21,47 +17,56 @@ class NoticeCell: UITableViewCell {
     
     
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        view = UIView(frame: rect)
+    convenience init(bgColor: UIColor, course: String, title: String, ddl: Int) {
+        self.init(style: .default, reuseIdentifier: "NoticeCell")
+        view = UIView()
         view.backgroundColor = bgColor
-//        view.setCornerRadius(radius: 20)
+        view.setCornerRadius(radius: 20)
+        contentView.addSubview(view)
+        view.snp.makeConstraints { (make) in
+            make.width.equalTo(screen.width - 80)
+            make.height.equalTo(80)
+            make.centerX.centerY.equalTo(contentView)
+//            make..equalTo(contentView)
+        }
 //        view.layer.shouldRasterize = true
 //        view.layer.shadowOpacity = 0.2
-//        view.layer.shadowPath = UIBezierPath(rect: rect.offsetBy(dx: 20, dy: 20)).cgPath
-        contentView.addSubview(view)
+//        view.layer.sha
         
         courseLabel = UILabel()
+        courseLabel.text = course
         courseLabel.font = .boldSystemFont(ofSize: 19)
         courseLabel.textAlignment = .center
         courseLabel.textColor = .systemBlue
         view.addSubview(courseLabel)
         courseLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(view).offset(30)
-            make.top.equalTo(view).offset(20)
+            make.left.equalTo(view).offset(10)
+            make.top.equalTo(view).offset(10)
         }
         
         titleLabel = UILabel()
+        titleLabel.text = title
         titleLabel.font = .systemFont(ofSize: 19)
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 1
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(courseLabel).offset(30)
+            make.left.equalTo(courseLabel.snp.right).offset(30)
+            make.bottom.equalTo(courseLabel)
         }
         
         ddlLabel = UILabel()
         ddlLabel.font = .systemFont(ofSize: 16, weight: .light)
         ddlLabel.textAlignment = .left
-        ddlLabel.text = "截止日期" + (ddlTime ?? 0).timestampToDate(dateFormat: "yyyy/MM/dd hh:mm")
+        ddlLabel.text = "截止日期" + ddl.timestampToDate(dateFormat: "yyyy/MM/dd hh:mm")
         view.addSubview(ddlLabel)
         ddlLabel.snp.makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.left.equalTo(view).offset(20)
         }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 }

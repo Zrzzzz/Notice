@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    var newNotices: [NoticeModel] = [NoticeModel(id: 1, type: 0, course: "高等数学", title: "xswl", detail: nil, ddl: 1583298843)]
+    var newNotices: [NoticeModel] = [NoticeModel(id: 1, type: 0, course: "高等数学", title: "xswl", detail: "", ddl: 1583298843)]
     var readNotices: [NoticeModel] = []
     var outNotices:[NoticeModel] = []
     var tableView: UITableView!
@@ -33,6 +33,7 @@ extension HomeViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.allowsSelection = false
         view.addSubview(tableView)
     }
 }
@@ -67,38 +68,33 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 100
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellid = "homeCell"
         tableView.register(NoticeCell.self, forCellReuseIdentifier: cellid)
-        let cell: NoticeCell = tableView.dequeueReusableCell(withIdentifier: cellid) as! NoticeCell
         switch indexPath.section {
         case 0:
             let notice = newNotices[indexPath.row]
-            cell.courseLabel.text = notice.course
-            cell.titleLabel.text = notice.title
-            cell.ddlTime = notice.ddl
-            cell.bgColor = .orange
+            let cell = NoticeCell(bgColor: .orange, course: notice.course!, title: notice.title!, ddl: notice.ddl!)
+            
+            return cell
+            
         case 1:
             let notice = readNotices[indexPath.row]
-            cell.courseLabel.text = notice.course
-            cell.titleLabel.text = notice.title
-            cell.ddlTime = notice.ddl
+            let cell = NoticeCell(bgColor: .orange, course: notice.course!, title: notice.title!, ddl: notice.ddl!)
+            
+            return cell
             
         default:
             let notice = outNotices[indexPath.row]
-            cell.courseLabel.text = notice.course
-            cell.titleLabel.text = notice.title
-            cell.ddlTime = notice.ddl
-            
+            let cell = NoticeCell(bgColor: .orange, course: notice.course!, title: notice.title!, ddl: notice.ddl!)
+            return cell
         }
-        
-        return cell
     }
     
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
+//        tableView.deselectRow(at: indexPath, animated: true)
 //    }
 }
