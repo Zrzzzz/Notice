@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     var usernameTextField: LoginTextField!
     var passwordLabel: UILabel!
     var passwordTextField: LoginTextField!
+    var loginButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class LoginViewController: UIViewController {
     }
 }
 
-// UI
+//MARK: - UI
 extension LoginViewController {
     func setup() {
         usernameTextField = LoginTextField()
@@ -33,7 +34,7 @@ extension LoginViewController {
         usernameTextField.placeholder = "在此输入用户名"
         usernameTextField.snp.makeConstraints { (make) in
             make.width.equalTo(200)
-            make.height.equalTo(50)
+            make.height.equalTo(30)
             make.centerY.equalTo(view.snp.centerY)
             make.centerX.equalTo(view.snp.centerX).offset(20)
         }
@@ -45,7 +46,7 @@ extension LoginViewController {
         usernameLabel.sizeToFit()
         usernameLabel.snp.makeConstraints { (make) in
             make.right.equalTo(usernameTextField.snp.left).offset(-20)
-            make.centerY.equalTo(usernameTextField.snp.centerY)
+            make.centerY.equalTo(usernameTextField)
         }
         
         passwordTextField = LoginTextField()
@@ -54,9 +55,9 @@ extension LoginViewController {
         passwordTextField.isSecureTextEntry = true
         passwordTextField.snp.makeConstraints { (make) in
             make.width.equalTo(200)
-            make.height.equalTo(50)
+            make.height.equalTo(30)
             make.top.equalTo(usernameTextField).offset(40)
-            make.centerX.equalTo(usernameTextField.snp.centerX)
+            make.centerX.equalTo(usernameTextField)
         }
         
         passwordLabel = UILabel()
@@ -65,8 +66,25 @@ extension LoginViewController {
         passwordLabel.font = .systemFont(ofSize: 20, weight: .medium)
         passwordLabel.sizeToFit()
         passwordLabel.snp.makeConstraints { (make) in            make.right.equalTo(passwordTextField.snp.left).offset(-20)
-            make.centerY.equalTo(passwordTextField.snp.centerY)
+            make.centerY.equalTo(passwordTextField)
         }
 
+        loginButton = UIButton()
+        view.addSubview(loginButton)
+        loginButton.setCornerRadius(radius: 10)
+        loginButton.backgroundColor = .systemBlue
+        loginButton.setTitle("登录", for: .normal)
+        loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .black)
+        loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        loginButton.snp.makeConstraints { (make) in
+            make.top.equalTo(passwordLabel).offset(40)
+            make.width.equalTo(70)
+            make.height.equalTo(30)
+            make.centerX.equalTo(view)
+        }
+    }
+    
+    @objc func login() {
+        
     }
 }

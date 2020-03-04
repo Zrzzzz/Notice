@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2D936F77CACC3B000E2B0055 /* Pods_Notice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7671CC138C1BD8C3DE529719 /* Pods_Notice.framework */; };
+		D318625F240EBBFF00ADA771 /* TotalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318625E240EBBFF00ADA771 /* TotalExtension.swift */; };
+		D3186267240EBE1D00ADA771 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3186266240EBE1D00ADA771 /* HomeViewController.swift */; };
+		D3186269240EBE6500ADA771 /* NoticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3186268240EBE6500ADA771 /* NoticeModel.swift */; };
+		D318626B240EC0AD00ADA771 /* NoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318626A240EC0AD00ADA771 /* NoticeCell.swift */; };
+		D318626D240F5B7A00ADA771 /* HeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318626C240F5B7A00ADA771 /* HeadView.swift */; };
 		D3645F1A240BA05F00BC12C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3645F19240BA05F00BC12C0 /* LoginViewController.swift */; };
 		D3645F20240BA18800BC12C0 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3645F1F240BA18800BC12C0 /* LoginTextField.swift */; };
 		D3B255B0240B9E030040AAE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B255AF240B9E030040AAE0 /* AppDelegate.swift */; };
@@ -20,6 +25,11 @@
 		026B308B37AED004607BA7F2 /* Pods-Notice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notice.debug.xcconfig"; path = "Target Support Files/Pods-Notice/Pods-Notice.debug.xcconfig"; sourceTree = "<group>"; };
 		05E0434E8826D5DD4A8DFD6D /* Pods-Notice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notice.release.xcconfig"; path = "Target Support Files/Pods-Notice/Pods-Notice.release.xcconfig"; sourceTree = "<group>"; };
 		7671CC138C1BD8C3DE529719 /* Pods_Notice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D318625E240EBBFF00ADA771 /* TotalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalExtension.swift; sourceTree = "<group>"; };
+		D3186266240EBE1D00ADA771 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D3186268240EBE6500ADA771 /* NoticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeModel.swift; sourceTree = "<group>"; };
+		D318626A240EC0AD00ADA771 /* NoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCell.swift; sourceTree = "<group>"; };
+		D318626C240F5B7A00ADA771 /* HeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadView.swift; sourceTree = "<group>"; };
 		D3645F19240BA05F00BC12C0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D3645F1F240BA18800BC12C0 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		D3B255AC240B9E030040AAE0 /* Notice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +67,56 @@
 				7671CC138C1BD8C3DE529719 /* Pods_Notice.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3186260240EBD9C00ADA771 /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				D3186262240EBDD400ADA771 /* Home */,
+			);
+			path = Student;
+			sourceTree = "<group>";
+		};
+		D3186261240EBDB700ADA771 /* Teacher */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Teacher;
+			sourceTree = "<group>";
+		};
+		D3186262240EBDD400ADA771 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D3186265240EBDF600ADA771 /* M */,
+				D3186263240EBDEC00ADA771 /* C */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D3186263240EBDEC00ADA771 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				D3186266240EBE1D00ADA771 /* HomeViewController.swift */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		D3186264240EBDF200ADA771 /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		D3186265240EBDF600ADA771 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				D3186268240EBE6500ADA771 /* NoticeModel.swift */,
+				D3186264240EBDF200ADA771 /* V */,
+				D318626A240EC0AD00ADA771 /* NoticeCell.swift */,
+				D318626C240F5B7A00ADA771 /* HeadView.swift */,
+			);
+			path = M;
 			sourceTree = "<group>";
 		};
 		D3645F1B240BA06700BC12C0 /* Login */ = {
@@ -114,7 +174,10 @@
 			isa = PBXGroup;
 			children = (
 				D3B255AF240B9E030040AAE0 /* AppDelegate.swift */,
+				D318625E240EBBFF00ADA771 /* TotalExtension.swift */,
 				D3645F1B240BA06700BC12C0 /* Login */,
+				D3186260240EBD9C00ADA771 /* Student */,
+				D3186261240EBDB700ADA771 /* Teacher */,
 				D3B255B5240B9E030040AAE0 /* Main.storyboard */,
 				D3B255B8240B9E040040AAE0 /* Assets.xcassets */,
 				D3B255BA240B9E040040AAE0 /* LaunchScreen.storyboard */,
@@ -238,9 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3186267240EBE1D00ADA771 /* HomeViewController.swift in Sources */,
+				D318625F240EBBFF00ADA771 /* TotalExtension.swift in Sources */,
 				D3645F20240BA18800BC12C0 /* LoginTextField.swift in Sources */,
+				D3186269240EBE6500ADA771 /* NoticeModel.swift in Sources */,
 				D3645F1A240BA05F00BC12C0 /* LoginViewController.swift in Sources */,
 				D3B255B0240B9E030040AAE0 /* AppDelegate.swift in Sources */,
+				D318626D240F5B7A00ADA771 /* HeadView.swift in Sources */,
+				D318626B240EC0AD00ADA771 /* NoticeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,10 +27,9 @@ class LoginTextField: UITextField {
     override func layoutSubviews() {
         super .layoutSubviews()
         
-//        self.layer.cornerRadius = 20
-//        self.layer.masksToBounds = true
-        
-        self.borderStyle = .roundedRect
+        self.setCornerRadius(radius: 10)
+        self.layer.borderColor = .init(srgbRed: 0, green: 0, blue: 0, alpha: 1)
+        self.layer.borderWidth = 1
         
     }
 }
