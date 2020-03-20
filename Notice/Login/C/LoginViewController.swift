@@ -11,11 +11,16 @@ import SnapKit
 
 class LoginViewController: UIViewController {
     
-    var usernameLabel: UILabel!
-    var usernameTextField: LoginTextField!
-    var passwordLabel: UILabel!
-    var passwordTextField: LoginTextField!
     var loginButton: UIButton!
+    var whiteView: UIView!
+    var avatar: UIImageView!
+    var welcome: UILabel!
+    var signin: UILabel!
+    
+    var assets: [LoginSetView] = []
+    let titles = ["姓名", "手机号码", "邮箱", "密码", "确认密码"]
+    let placeholders = ["请输入您的姓名", "请输入您的手机号码", "请输入您的邮箱", "请输入您的密码", "请确认密码"]
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,62 +34,60 @@ class LoginViewController: UIViewController {
 //MARK: - UI
 extension LoginViewController {
     func setup() {
-        usernameTextField = LoginTextField()
-        view.addSubview(usernameTextField)
-        usernameTextField.placeholder = "在此输入用户名"
-        usernameTextField.snp.makeConstraints { (make) in
-            make.width.equalTo(200)
-            make.height.equalTo(30)
-            make.centerY.equalTo(view.snp.centerY)
-            make.centerX.equalTo(view.snp.centerX).offset(20)
+        view.backgroundColor = UIColor(red: 0.26, green: 0.4, blue: 0.35, alpha: 1)
+        
+        avatar = UIImageView()
+        view.addSubview(avatar)
+        avatar.snp.makeConstraints { (make) in
+            make.left.equalTo(view).offset(20)
+            make.top.equalTo(view).offset(50)
+            make.width.height.equalTo(50)
         }
         
-        usernameLabel = UILabel()
-        view.addSubview(usernameLabel)
-        usernameLabel.text = "用户名"
-        usernameLabel.font = .systemFont(ofSize: 20, weight: .medium)
-        usernameLabel.sizeToFit()
-        usernameLabel.snp.makeConstraints { (make) in
-            make.right.equalTo(usernameTextField.snp.left).offset(-20)
-            make.centerY.equalTo(usernameTextField)
+        welcome = UILabel()
+        welcome.text = "Welcome"
+        welcome.font = .systemFont(ofSize: 24)
+        welcome.textColor = UIColor(red: 0.51, green: 0.6, blue: 0.57,alpha:1)
+        view.addSubview(welcome)
+        welcome.sizeToFit()
+        welcome.snp.makeConstraints { (make) in
+            make.top.equalTo(avatar).offset(30)
+            make.left.equalTo(avatar)
         }
         
-        passwordTextField = LoginTextField()
-        view.addSubview(passwordTextField)
-        passwordTextField.placeholder = "在此输入密码"
-        passwordTextField.isSecureTextEntry = true
-        passwordTextField.snp.makeConstraints { (make) in
-            make.width.equalTo(200)
-            make.height.equalTo(30)
-            make.top.equalTo(usernameTextField).offset(40)
-            make.centerX.equalTo(usernameTextField)
+        signin = UILabel()
+        signin.text = "Sign in"
+        signin.font = .systemFont(ofSize: 40)
+        signin.textColor = .white
+        signin.sizeToFit()
+        view.addSubview(signin)
+        signin.snp.makeConstraints { (make) in
+            make.top.equalTo(welcome).offset(30)
+            make.left.equalTo(welcome)
         }
         
-        passwordLabel = UILabel()
-        view.addSubview(passwordLabel)
-        passwordLabel.text = "密码"
-        passwordLabel.font = .systemFont(ofSize: 20, weight: .medium)
-        passwordLabel.sizeToFit()
-        passwordLabel.snp.makeConstraints { (make) in            make.right.equalTo(passwordTextField.snp.left).offset(-20)
-            make.centerY.equalTo(passwordTextField)
-        }
-
-        loginButton = UIButton()
-        view.addSubview(loginButton)
-        loginButton.setCornerRadius(radius: 10)
-        loginButton.backgroundColor = .systemBlue
-        loginButton.setTitle("登录", for: .normal)
-        loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .black)
-        loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
-        loginButton.snp.makeConstraints { (make) in
-            make.top.equalTo(passwordLabel).offset(40)
-            make.width.equalTo(70)
-            make.height.equalTo(30)
-            make.centerX.equalTo(view)
+        whiteView = UIView(frame: CGRect(x: 0, y: 180, width: screen.width, height: screen.height - 100))
+        whiteView.backgroundColor = .white
+        whiteView.setCornerRadius(radius: 20)
+        view.addSubview(whiteView)
+        
+        
+        for i in 0..<5 {
+            let asset = LoginSetView(titleText: titles[i], placeholder: placeholders[i], color: UIColor(red: 0.26, green: 0.4, blue: 0.35, alpha: 1))
+            asset.frame.origin = CGPoint(x: 20, y: 100 * i + 220)
+            view.addSubview(asset)
+            if i == 3 { asset.textField.isSecureTextEntry = true }
+            if i == 4 {
+                asset.textField.isSecureTextEntry = true
+                asset.textField.addTarget(self, action: #selector(checkPassword), for: .editingDidEnd)
+            }
+            assets.append(asset)
         }
     }
     
-    @objc func login() {
-        
+    @objc func checkPassword() {
+        if assets[3].textField.text != assets[4].textField.text {
+            assets[4].line.strokeColor = UIColor.red.cgColor
+        }
     }
 }

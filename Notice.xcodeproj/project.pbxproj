@@ -14,7 +14,7 @@
 		D318626B240EC0AD00ADA771 /* NoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318626A240EC0AD00ADA771 /* NoticeCell.swift */; };
 		D318626D240F5B7A00ADA771 /* HeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318626C240F5B7A00ADA771 /* HeadView.swift */; };
 		D3645F1A240BA05F00BC12C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3645F19240BA05F00BC12C0 /* LoginViewController.swift */; };
-		D3645F20240BA18800BC12C0 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3645F1F240BA18800BC12C0 /* LoginTextField.swift */; };
+		D392C13424249EF0003EDFAB /* LoginText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D392C13324249EF0003EDFAB /* LoginText.swift */; };
 		D3B255B0240B9E030040AAE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B255AF240B9E030040AAE0 /* AppDelegate.swift */; };
 		D3B255B7240B9E030040AAE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B255B5240B9E030040AAE0 /* Main.storyboard */; };
 		D3B255B9240B9E040040AAE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3B255B8240B9E040040AAE0 /* Assets.xcassets */; };
@@ -31,7 +31,7 @@
 		D318626A240EC0AD00ADA771 /* NoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCell.swift; sourceTree = "<group>"; };
 		D318626C240F5B7A00ADA771 /* HeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadView.swift; sourceTree = "<group>"; };
 		D3645F19240BA05F00BC12C0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		D3645F1F240BA18800BC12C0 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		D392C13324249EF0003EDFAB /* LoginText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginText.swift; sourceTree = "<group>"; };
 		D3B255AC240B9E030040AAE0 /* Notice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B255AF240B9E030040AAE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3B255B6240B9E030040AAE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				D3186265240EBDF600ADA771 /* M */,
+				D3186264240EBDF200ADA771 /* V */,
 				D3186263240EBDEC00ADA771 /* C */,
 			);
 			path = Home;
@@ -104,6 +105,8 @@
 		D3186264240EBDF200ADA771 /* V */ = {
 			isa = PBXGroup;
 			children = (
+				D318626A240EC0AD00ADA771 /* NoticeCell.swift */,
+				D318626C240F5B7A00ADA771 /* HeadView.swift */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -112,9 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				D3186268240EBE6500ADA771 /* NoticeModel.swift */,
-				D3186264240EBDF200ADA771 /* V */,
-				D318626A240EC0AD00ADA771 /* NoticeCell.swift */,
-				D318626C240F5B7A00ADA771 /* HeadView.swift */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -140,7 +140,7 @@
 		D3645F1D240BA08200BC12C0 /* V */ = {
 			isa = PBXGroup;
 			children = (
-				D3645F1F240BA18800BC12C0 /* LoginTextField.swift */,
+				D392C13324249EF0003EDFAB /* LoginText.swift */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -302,8 +302,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3186267240EBE1D00ADA771 /* HomeViewController.swift in Sources */,
+				D392C13424249EF0003EDFAB /* LoginText.swift in Sources */,
 				D318625F240EBBFF00ADA771 /* TotalExtension.swift in Sources */,
-				D3645F20240BA18800BC12C0 /* LoginTextField.swift in Sources */,
 				D3186269240EBE6500ADA771 /* NoticeModel.swift in Sources */,
 				D3645F1A240BA05F00BC12C0 /* LoginViewController.swift in Sources */,
 				D3B255B0240B9E030040AAE0 /* AppDelegate.swift in Sources */,

@@ -23,7 +23,15 @@ class HeadView: UIView {
         title.text = text
         addSubview(title)
         
-//        let line = 
+        let linepath = UIBezierPath()
+        linepath.move(to: CGPoint(x: 40, y: 50)) //开始绘制，表示这个点是起点
+        linepath.addLine(to: CGPoint(x: screen.width-50, y: 50))
+        let line = CAShapeLayer()
+        line.path = linepath.cgPath
+        line.fillColor = color.cgColor
+        line.strokeColor = color.cgColor
+        line.lineWidth = 2
+        layer.addSublayer(line)
     }
     
 }

@@ -27,11 +27,14 @@ class NoticeCell: UITableViewCell {
             make.width.equalTo(screen.width - 80)
             make.height.equalTo(80)
             make.centerX.centerY.equalTo(contentView)
-//            make..equalTo(contentView)
+
         }
-//        view.layer.shouldRasterize = true
-//        view.layer.shadowOpacity = 0.2
-//        view.layer.sha
+        
+        view.layer.shadowOpacity = 0.5
+        view.layer.shadowRadius = 10
+        view.layer.shadowOffset = CGSize(width: 20, height: 20)
+        view.layer.shadowColor = bgColor.cgColor
+        view.layer.shadowPath = UIBezierPath(rect: CGRect(x: view.bounds.width, y: view.bounds.height, width: 10, height: 10)).cgPath
         
         courseLabel = UILabel()
         courseLabel.text = course
