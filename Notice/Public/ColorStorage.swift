@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct TNColor {
+public struct TNColor {
     static let calendarBgc = UIColor.init { trainCollection -> UIColor in
         if trainCollection.userInterfaceStyle == .dark {
             return UIColor.black
