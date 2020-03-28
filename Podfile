@@ -1,4 +1,4 @@
-source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+#source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 # Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
 
@@ -8,7 +8,6 @@ target 'Notice' do
   pod 'SnapKit'
   pod 'Alamofire'
   pod 'SDWebImage'
-  pod 'NewPopMenu'
   # Pods for Notice
 
 end

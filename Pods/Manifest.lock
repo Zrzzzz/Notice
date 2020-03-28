@@ -1,6 +1,5 @@
 PODS:
   - Alamofire (4.9.1)
-  - NewPopMenu (2.1.2)
   - SDWebImage (5.5.2):
     - SDWebImage/Core (= 5.5.2)
   - SDWebImage/Core (5.5.2)
@@ -8,23 +7,20 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - NewPopMenu
   - SDWebImage
   - SnapKit
 
 SPEC REPOS:
-  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+  trunk:
     - Alamofire
-    - NewPopMenu
     - SDWebImage
     - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  NewPopMenu: c6129e08e8192f6257ceb5f9a4357e1b59c6e2e7
   SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 38195472ada5177b2198a9b5be1b5e11aa50d0f7
+PODFILE CHECKSUM: 83f7d5a0b9c5c57b799035771140dbf8be0a61ef
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.0.beta.3

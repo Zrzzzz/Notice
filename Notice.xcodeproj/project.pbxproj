@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043F611F242907A60013AEBD /* STTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F611E242907A60013AEBD /* STTabBarController.swift */; };
+		043F6121242907BB0013AEBD /* STTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6120242907BB0013AEBD /* STTabBar.swift */; };
+		043F6123242907CB0013AEBD /* STTabBarCenterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6122242907CB0013AEBD /* STTabBarCenterButton.swift */; };
+		043F612624290F760013AEBD /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F612524290F760013AEBD /* ScheduleController.swift */; };
+		04CF770C242A4DFC00F13060 /* NoticeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF770B242A4DFC00F13060 /* NoticeController.swift */; };
+		04CF770E242A5D1900F13060 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04CF770D242A5D1900F13060 /* Alamofire.framework */; };
+		04CF7710242B17B300F13060 /* CenterBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF770F242B17B300F13060 /* CenterBtnView.swift */; };
+		04CF7712242B7ED000F13060 /* TNCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF7711242B7ED000F13060 /* TNCalendar.swift */; };
+		04CF7714242B80A100F13060 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF7713242B80A100F13060 /* CalendarView.swift */; };
+		04CF7724242C6AA300F13060 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF7723242C6AA300F13060 /* CalendarCell.swift */; };
+		04F06582242DE7D800605D6F /* ColorStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F06581242DE7D800605D6F /* ColorStorage.swift */; };
 		2D936F77CACC3B000E2B0055 /* Pods_Notice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7671CC138C1BD8C3DE529719 /* Pods_Notice.framework */; };
 		D318625F240EBBFF00ADA771 /* TotalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318625E240EBBFF00ADA771 /* TotalExtension.swift */; };
 		D3186267240EBE1D00ADA771 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3186266240EBE1D00ADA771 /* HomeViewController.swift */; };
@@ -23,6 +34,17 @@
 
 /* Begin PBXFileReference section */
 		026B308B37AED004607BA7F2 /* Pods-Notice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notice.debug.xcconfig"; path = "Target Support Files/Pods-Notice/Pods-Notice.debug.xcconfig"; sourceTree = "<group>"; };
+		043F611E242907A60013AEBD /* STTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTabBarController.swift; sourceTree = "<group>"; };
+		043F6120242907BB0013AEBD /* STTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTabBar.swift; sourceTree = "<group>"; };
+		043F6122242907CB0013AEBD /* STTabBarCenterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTabBarCenterButton.swift; sourceTree = "<group>"; };
+		043F612524290F760013AEBD /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
+		04CF770B242A4DFC00F13060 /* NoticeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeController.swift; sourceTree = "<group>"; };
+		04CF770D242A5D1900F13060 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04CF770F242B17B300F13060 /* CenterBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterBtnView.swift; sourceTree = "<group>"; };
+		04CF7711242B7ED000F13060 /* TNCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNCalendar.swift; sourceTree = "<group>"; };
+		04CF7713242B80A100F13060 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		04CF7723242C6AA300F13060 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		04F06581242DE7D800605D6F /* ColorStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStorage.swift; sourceTree = "<group>"; };
 		05E0434E8826D5DD4A8DFD6D /* Pods-Notice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notice.release.xcconfig"; path = "Target Support Files/Pods-Notice/Pods-Notice.release.xcconfig"; sourceTree = "<group>"; };
 		7671CC138C1BD8C3DE529719 /* Pods_Notice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D318625E240EBBFF00ADA771 /* TotalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalExtension.swift; sourceTree = "<group>"; };
@@ -45,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04CF770E242A5D1900F13060 /* Alamofire.framework in Frameworks */,
 				2D936F77CACC3B000E2B0055 /* Pods_Notice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,6 +75,84 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		043F611D242907930013AEBD /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				043F611E242907A60013AEBD /* STTabBarController.swift */,
+				043F6120242907BB0013AEBD /* STTabBar.swift */,
+				043F6122242907CB0013AEBD /* STTabBarCenterButton.swift */,
+				04CF770F242B17B300F13060 /* CenterBtnView.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		043F612424290BB00013AEBD /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				043F612924290F840013AEBD /* Module */,
+				043F612824290F7E0013AEBD /* View */,
+				043F612724290F7A0013AEBD /* Controller */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		043F612724290F7A0013AEBD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				043F612524290F760013AEBD /* ScheduleController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		043F612824290F7E0013AEBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04CF7723242C6AA300F13060 /* CalendarCell.swift */,
+				04CF7713242B80A100F13060 /* CalendarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		043F612924290F840013AEBD /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				04CF7711242B7ED000F13060 /* TNCalendar.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		04CF7705242A4D7500F13060 /* TJUNotic */ = {
+			isa = PBXGroup;
+			children = (
+				04CF7708242A4D8F00F13060 /* Model */,
+				04CF7707242A4D8C00F13060 /* View */,
+				04CF7706242A4D7E00F13060 /* Controller */,
+			);
+			path = TJUNotic;
+			sourceTree = "<group>";
+		};
+		04CF7706242A4D7E00F13060 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04CF770B242A4DFC00F13060 /* NoticeController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04CF7707242A4D8C00F13060 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04CF7708242A4D8F00F13060 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		96E493416CB0AAFD9D889B9B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +165,7 @@
 		C21D06DC9EC1674A0BA3737C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04CF770D242A5D1900F13060 /* Alamofire.framework */,
 				7671CC138C1BD8C3DE529719 /* Pods_Notice.framework */,
 			);
 			name = Frameworks;
@@ -75,13 +177,6 @@
 				D3186262240EBDD400ADA771 /* Home */,
 			);
 			path = Student;
-			sourceTree = "<group>";
-		};
-		D3186261240EBDB700ADA771 /* Teacher */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Teacher;
 			sourceTree = "<group>";
 		};
 		D3186262240EBDD400ADA771 /* Home */ = {
@@ -173,15 +268,18 @@
 		D3B255AE240B9E030040AAE0 /* Notice */ = {
 			isa = PBXGroup;
 			children = (
+				04CF7705242A4D7500F13060 /* TJUNotic */,
+				043F612424290BB00013AEBD /* Schedule */,
 				D3B255AF240B9E030040AAE0 /* AppDelegate.swift */,
 				D318625E240EBBFF00ADA771 /* TotalExtension.swift */,
+				043F611D242907930013AEBD /* Tabbar */,
 				D3645F1B240BA06700BC12C0 /* Login */,
 				D3186260240EBD9C00ADA771 /* Student */,
-				D3186261240EBDB700ADA771 /* Teacher */,
 				D3B255B5240B9E030040AAE0 /* Main.storyboard */,
 				D3B255B8240B9E040040AAE0 /* Assets.xcassets */,
 				D3B255BA240B9E040040AAE0 /* LaunchScreen.storyboard */,
 				D3B255BD240B9E040040AAE0 /* Info.plist */,
+				04F06581242DE7D800605D6F /* ColorStorage.swift */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -301,14 +399,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043F6123242907CB0013AEBD /* STTabBarCenterButton.swift in Sources */,
+				04F06582242DE7D800605D6F /* ColorStorage.swift in Sources */,
+				04CF7724242C6AA300F13060 /* CalendarCell.swift in Sources */,
 				D3186267240EBE1D00ADA771 /* HomeViewController.swift in Sources */,
+				04CF7714242B80A100F13060 /* CalendarView.swift in Sources */,
 				D392C13424249EF0003EDFAB /* LoginText.swift in Sources */,
+				04CF7712242B7ED000F13060 /* TNCalendar.swift in Sources */,
+				043F6121242907BB0013AEBD /* STTabBar.swift in Sources */,
+				04CF770C242A4DFC00F13060 /* NoticeController.swift in Sources */,
 				D318625F240EBBFF00ADA771 /* TotalExtension.swift in Sources */,
+				04CF7710242B17B300F13060 /* CenterBtnView.swift in Sources */,
 				D3186269240EBE6500ADA771 /* NoticeModel.swift in Sources */,
 				D3645F1A240BA05F00BC12C0 /* LoginViewController.swift in Sources */,
 				D3B255B0240B9E030040AAE0 /* AppDelegate.swift in Sources */,
+				043F612624290F760013AEBD /* ScheduleController.swift in Sources */,
 				D318626D240F5B7A00ADA771 /* HeadView.swift in Sources */,
 				D318626B240EC0AD00ADA771 /* NoticeCell.swift in Sources */,
+				043F611F242907A60013AEBD /* STTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +562,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 46H3U2735R;
 				INFOPLIST_FILE = Notice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -472,6 +581,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 46H3U2735R;
 				INFOPLIST_FILE = Notice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

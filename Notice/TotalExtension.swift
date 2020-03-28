@@ -75,3 +75,38 @@ extension String {
     }
 }
 
+extension UIColor {
+/**
+ The six-digit hexadecimal representation of color of the form #RRGGBB.
+ 
+ - parameter hex6: Six-digit hexadecimal value.
+ */
+public convenience init(hex6: UInt32, alpha: CGFloat = 1) {
+    // TODO: below
+    // Store Hex converted UIColours (R, G, B, A) to a persistent file (.plist)
+    // And when initializing the app, read from the plist into the memory as a static struct (Metadata.Color)
+    let divisor = CGFloat(255)
+    let r = CGFloat((hex6 & 0xFF0000) >> 16) / divisor
+    let g = CGFloat((hex6 & 0x00FF00) >>  8) / divisor
+    let b = CGFloat( hex6 & 0x0000FF       ) / divisor
+    self.init(red: r, green: g, blue: b, alpha: alpha)
+    }
+}
+
+extension UIFont {
+    static func flexibleSystemFont(ofSize size: CGFloat) -> UIFont {
+        var size = size
+        if UIDevice.current.model != "iPad" {
+            size = (UIScreen.main.bounds.size.width / 375.0) * size
+        }
+        return UIFont.systemFont(ofSize: size)
+    }
+    
+    static func flexibleSystemFont(ofSize size: CGFloat, weight: UIFont.Weight) -> UIFont {
+        var size = size
+        if UIDevice.current.model != "iPad" {
+            size = (UIScreen.main.bounds.size.width / 375.0) * size
+        }
+        return UIFont.systemFont(ofSize: size, weight: weight)
+    }
+}
