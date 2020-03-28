@@ -133,6 +133,13 @@
 			path = AppInfo;
 			sourceTree = "<group>";
 		};
+		044B0AA0242F1DA7000E5591 /* PersonalPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PersonalPage;
+			sourceTree = "<group>";
+		};
 		04CF7705242A4D7500F13060 /* TJUNotice */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				D3B255BD240B9E040040AAE0 /* Info.plist */,
+				044B0AA0242F1DA7000E5591 /* PersonalPage */,
 				044B0A9F242F1C36000E5591 /* AppInfo */,
 				044B0A9E242F1C24000E5591 /* Public */,
 				04CF7705242A4D7500F13060 /* TJUNotice */,
