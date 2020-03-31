@@ -56,7 +56,23 @@ class TNCalendar {
     init() {
         setDefaultInfo(date: Date())
     }
+    
+    public func setYear(_ year: Int) {
+        self.year = year
+    }
 
+    public func getYear() -> Int{
+        return self.year ?? -1
+    }
+    
+    public func setMonth(_ month: Int) {
+        self.month = month
+    }
+    
+    public func getMonth() -> Int {
+        return self.month ?? -1
+    }
+    
     fileprivate func setDefaultInfo(date: Date) {
         let components = Calendar.current
         year = components.component(.year, from: date)
@@ -90,6 +106,14 @@ class TNCalendar {
 
     //根据选中日期，获取相应NSDate
     public func getSelectDate() -> Date {
+        var dateComponents = DateComponents()
+        dateComponents.year = year
+        dateComponents.month = month
+        let calendar = Calendar(identifier: .gregorian)
+        return calendar.date(from: dateComponents)!
+    }
+    
+    public func getSelectDate(_ year: Int, _ month: Int) -> Date {
         var dateComponents = DateComponents()
         dateComponents.year = year
         dateComponents.month = month

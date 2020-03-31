@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = tabBarController
         window?.backgroundColor = .white
         return true
-        }
+    }
 
 }
 
