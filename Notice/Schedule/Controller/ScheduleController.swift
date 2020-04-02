@@ -14,17 +14,25 @@ class ScheduleController: UIViewController {
     let layout = UICollectionViewFlowLayout()
     var header: CalendarHeaderView!
     var tableView: ListTableView!
-    var calendarHeight: CGFloat!
+    var calendarHeight: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initView()
+    }
+    
+    private func initView() {
         view.backgroundColor = TNColor.calendarBgc
+        calendar = CalendarView(frame: .zero, collectionViewLayout: layout)
+        calendar.delegate = self
+        calendar.dataSource = self
+        view.addSubview(calendar)
         header = CalendarHeaderView()
         view.addSubview(header)
-        calendar = CalendarView(frame: .zero, collectionViewLayout: layout)
-        view.addSubview(calendar)
-        calendarHeight = CGFloat((calendar.getLine() + 1) * 37 + 108)
-        tableView = ListTableView(frame: CGRect(x: 0, y: calendarHeight, width: screen.width, height: screen.height - calendarHeight), style: .grouped)
+        calendarHeight = (calendar.getLine() + 1) * 37 + 108
+        tableView = ListTableView(frame: .zero, style: .grouped)
+        tableView.delegate = self
+        tableView.dataSource = self
         view.addSubview(tableView)
     }
     
@@ -36,10 +44,15 @@ class ScheduleController: UIViewController {
         }
         calendar.snp.makeConstraints { make in
             //(screen.width - 68 / 3) / 7
-            make.top.equalTo(header.snp.bottom)
+            make.top.equalTo(view).offset(90)
             make.left.equalTo(view).offset(34 / 3)
             make.right.equalTo(view).inset(34 / 3)
-            make.height.equalTo((calendar.getLine() + 1) * 37 + 18)
+            make.bottom.equalTo(header.snp.bottom).offset((calendar.getLine() + 1) * 37 + 18)
+        }
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(view).offset(calendarHeight)
+            make.left.right.equalTo(view)
+            make.height.equalTo(view)
         }
     }
 }

@@ -48,9 +48,9 @@ class STTabBar: UITabBar, UITabBarDelegate {
                 var frame = tabBarItem.frame
                 frame.size.width = (self.bounds.width - self.centerButton.bounds.width)/CGFloat((self.items?.count)!)
                 if currentItemIndex < 1{//如果
-                    frame.origin.x = CGFloat(currentItemIndex) * frame.size.width
+                    frame.origin.x = CGFloat(currentItemIndex) * frame.size.width - 35
                 }else{
-                    frame.origin.x = CGFloat(currentItemIndex) * frame.size.width + self.centerButton.bounds.width
+                    frame.origin.x = CGFloat(currentItemIndex) * frame.size.width + self.centerButton.bounds.width + 35
                 }
                 tabBarItem.frame = frame
                 currentItemIndex += 1

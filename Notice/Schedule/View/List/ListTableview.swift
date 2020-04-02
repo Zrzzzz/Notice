@@ -18,18 +18,18 @@ class ListTableView: UITableView {
         super.init(frame: frame, style: style)
         self.layer.cornerRadius = 10
         self.register(ListCell.self, forCellReuseIdentifier: "listcell")
-        delegate = self
-        dataSource = self
         initView()
     }
     
     private func initView() {
+        self.separatorStyle = .none
         header = UIView()
         header.frame = CGRect(x: 0, y: 0, width: screen.width, height: 22)
         self.tableHeaderView = header
         handle = UILabel()
         handle.backgroundColor = TNColor.listHandle
-        handle.layer.cornerRadius = 5 / 3
+        handle.layer.cornerRadius = 10 / 3
+        handle.layer.masksToBounds = true
         header.addSubview(handle)
         handle.snp.makeConstraints { make in
             make.top.equalTo(self).offset(20 / 3)
@@ -40,10 +40,10 @@ class ListTableView: UITableView {
         
         listHeader = ListHeader()
         
-        setEditing(true, animated: false)
-        allowsMultipleSelection = false
-        allowsSelectionDuringEditing = false
-        allowsMultipleSelectionDuringEditing = false
+//        setEditing(true, animated: false)
+//        allowsMultipleSelection = false
+//        allowsSelectionDuringEditing = false
+//        allowsMultipleSelectionDuringEditing = false
     }
     
     required init?(coder: NSCoder) {
@@ -51,7 +51,7 @@ class ListTableView: UITableView {
     }
 }
 
-extension ListTableView: UITableViewDelegate, UITableViewDataSource {
+extension ScheduleController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -71,21 +71,21 @@ extension ListTableView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return listHeader
+        return self.tableView.listHeader
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 22
+        return 30
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        <#code#>
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
     
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
-    }
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        return .delete
+//    }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-    }
+//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//        
+//    }
 }

@@ -51,6 +51,7 @@ class ListCell: UITableViewCell {
         
         sign = UILabel()
         sign.layer.cornerRadius = 2
+        sign.layer.masksToBounds = true
         
         title = UILabel()
         title.textColor = TNColor.listTitle
@@ -75,12 +76,12 @@ class ListCell: UITableViewCell {
         }
         contentView.addSubview(title)
         title.snp.makeConstraints { make in
-            make.left.equalTo(sign).offset(25 / 3)
-            make.top.equalTo(self).offset(46 / 3)
+            make.left.equalTo(sign).offset(12)
+            make.top.equalTo(self).offset(14)
         }
         contentView.addSubview(address)
         address.snp.makeConstraints { make in
-            make.top.equalTo(title.snp.bottom).offset(14 / 3)
+            make.top.equalTo(title.snp.bottom).offset(6)
             make.left.equalTo(title)
         }
         contentView.addSubview(time)
@@ -92,8 +93,8 @@ class ListCell: UITableViewCell {
     
     public func addData() {
         title.text = "设计中期实践"
-        sign.backgroundColor = .yellow
+        sign.backgroundColor = UIColor(hex6: 0xFBD266)
         address.text = "建筑学院西楼105"
-        time.text = "建筑学院西楼105"
+        time.text = "上午 8:30-11:30"
     }
 }

@@ -121,6 +121,15 @@ class TNCalendar {
         return calendar.date(from: dateComponents)!
     }
 
+    public func getSelectDate(_ year: Int, _ month: Int, _ day: Int) -> Date {
+        var dateComponents = DateComponents()
+        dateComponents.year = year
+        dateComponents.month = month
+        dateComponents.day = day
+        let calendar = Calendar(identifier: .gregorian)
+        return calendar.date(from: dateComponents)!
+    }
+    
     //获取目标月份的天数
     public func numberOfDaysInMonth() -> Int {
         return Calendar.current.range(of: .day, in: .month, for: self.getSelectDate())?.count ?? 0

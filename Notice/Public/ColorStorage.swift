@@ -31,4 +31,13 @@ public struct TNColor {
     static let listHandle = UIColor.init { trainCollection -> UIColor in
         return trainCollection.userInterfaceStyle == .dark ? UIColor(hex6: 0xB5B5B5): UIColor(hex6: 0xB5B5B5)
     }
+    static let festival = UIColor.init { trainCollection -> UIColor in
+        return trainCollection.userInterfaceStyle == .dark ? UIColor(hex6: 0xE6D6BB): UIColor(hex6: 0xE6D6BB)
+    }
+    static let dateNor = UIColor.init { trainCollection -> UIColor in
+        return trainCollection.userInterfaceStyle == .dark ? UIColor(hex6: 0xFFFFFF): UIColor(hex6: 0xFFFFFF)
+    }
+    static let dateSpe = UIColor.init { trainCollection -> UIColor in
+        return trainCollection.userInterfaceStyle == .dark ? UIColor(hex6: 0xFBD266): UIColor(hex6: 0xFBD266)
+    }
 }

@@ -24,6 +24,7 @@ class CalendarHeaderView: UIView {
     }
     
     private func initView() {
+        self.backgroundColor = TNColor.calendarBgc
         dateLabel = UILabel()
         dateLabel.text = "\(year)年\(month)月"
         dateLabel.font = UIFont.flexibleSystemFont(ofSize: 50 / 3)
@@ -45,8 +46,8 @@ class CalendarHeaderView: UIView {
             weekLabels.append(label)
             if i == 0 {
                 weekLabels[i].snp.makeConstraints { make in
-                    make.centerX.equalTo(self.snp.left).offset(106 / 3)
-                    make.top.equalTo(dateLabel.snp.bottom).offset(54 / 3)
+                    make.centerX.equalTo(self.snp.left).offset(40.5)
+                    make.top.equalTo(dateLabel.snp.bottom).offset(50 / 3)
                 }
             }else {
                 weekLabels[i].snp.makeConstraints { make in
