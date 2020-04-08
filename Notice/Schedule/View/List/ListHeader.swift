@@ -15,7 +15,6 @@ class ListHeader: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initView()
-        addData("3月25日")
         addView()
     }
     

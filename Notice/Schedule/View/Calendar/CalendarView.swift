@@ -15,6 +15,9 @@ class CalendarView: UICollectionView {
     var line: Int!
     var firstdayOfWeek: Int!
     var date: [Int]!
+    var selectItem: IndexPath!
+    var today: Int!
+    var selectDay: String!
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -38,6 +41,8 @@ class CalendarView: UICollectionView {
     private func initView() {
         self.backgroundColor = TNColor.calendarBgc
         self.minimumZoomScale = 0
+        today = Calendar.current.component(.day, from: Date())
+        selectDay = "\(month)月\(today)日"
     }
     
     private func loadData() {
@@ -49,6 +54,22 @@ class CalendarView: UICollectionView {
 }
 
 extension ScheduleController: UICollectionViewDataSource {
+    
+    func reloadSelectItem(_ index: IndexPath) {
+        //取消原本选中item
+        let cell = calendar.cellForItem(at: self.calendar!.selectItem) as! CalendarCell
+        cell.date.isHidden = true
+        cell.gregorian.textColor = TNColor.dateNor
+        cell.chinese.textColor = TNColor.dateNor
+        //更新选中item
+        self.calendar!.selectItem = index
+        let select = calendar.cellForItem(at: index) as! CalendarCell
+        select.date.isHidden = false
+        select.gregorian.textColor = TNColor.dateSpe
+        select.chinese.textColor = TNColor.dateSpe
+        self.tableView.listHeader.addData("\(self.calendar.month)月\(select.gregorian.text ?? "")日") 
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if calendar.line == nil {return 0}
         return 7 * calendar.line
@@ -72,11 +93,11 @@ extension ScheduleController: UICollectionViewDataSource {
             cell.gregorian.textColor = TNColor.dateNor
             cell.chinese.textColor = TNColor.dateNor
         }
-        let components = Calendar.current
-        if components.component(.day, from: Date()) == day {
+        if self.calendar.today == day {
             cell.date.isHidden = false
             cell.gregorian.textColor = TNColor.dateSpe
             cell.chinese.textColor = TNColor.dateSpe
+            self.calendar.selectItem = indexPath
         }
         return cell
     }
@@ -94,6 +115,7 @@ extension ScheduleController: UICollectionViewDelegateFlowLayout {
 
 extension ScheduleController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //日历和列表进行动态移动
         let itemLine = Int((indexPath.row + 1) / 7)
         if itemLine < 2 {
             self.calendar.snp.updateConstraints { make in
@@ -107,10 +129,8 @@ extension ScheduleController: UICollectionViewDelegate {
         self.tableView.snp.updateConstraints { make in
             make.top.equalTo(view).offset(self.calendarHeight - self.calendarHeight * (self.calendar.line - 1) / 7)
         }
-        let cell = collectionView.cellForItem(at: indexPath) as! CalendarCell
-        cell.date.isHidden = false
-        cell.gregorian.textColor = TNColor.dateSpe
-        cell.chinese.textColor = TNColor.dateSpe
+        //更新选中块
+        reloadSelectItem(indexPath)
         UIView.animate(withDuration: 1) {
             self.view.layoutIfNeeded()
         }

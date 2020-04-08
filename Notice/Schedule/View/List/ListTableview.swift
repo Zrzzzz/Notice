@@ -13,6 +13,7 @@ class ListTableView: UITableView {
     var handle: UILabel!
     var listHeader: ListHeader!
     var header: UIView!
+    
         
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)

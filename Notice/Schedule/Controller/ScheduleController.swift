@@ -15,6 +15,8 @@ class ScheduleController: UIViewController {
     var header: CalendarHeaderView!
     var tableView: ListTableView!
     var calendarHeight: Int!
+    var swipeGesture: UISwipeGestureRecognizer!
+    var returnBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +35,56 @@ class ScheduleController: UIViewController {
         tableView = ListTableView(frame: .zero, style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.listHeader.addData("\(calendar.month)月\(calendar.today!)日")
         view.addSubview(tableView)
+        returnBtn = UIButton()
+        returnBtn.backgroundColor = .red
+        returnBtn.addTarget(self, action: #selector(gt), for: .touchUpInside)
+        tableView.addSubview(returnBtn)
+        initSwipe()
+    }
+    
+    @objc func gt() {
+        calendar.snp.updateConstraints { make in
+            //(screen.width - 68 / 3) / 7
+            make.top.equalTo(view).offset(90)
+            make.left.equalTo(view).offset(34 / 3)
+            make.right.equalTo(view).inset(34 / 3)
+            make.bottom.equalTo(header.snp.bottom).offset((calendar.getLine() + 1) * 37 + 18)
+        }
+        tableView.snp.updateConstraints { make in
+            make.top.equalTo(view).offset(calendarHeight)
+            make.left.right.equalTo(view)
+            make.height.equalTo(view)
+        }
+        UIView.animate(withDuration: 1) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func initSwipe() {
+        swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture(_:)))
+        swipeGesture.direction = .down
+        swipeGesture.delegate = self
+        calendar.addGestureRecognizer(swipeGesture)
+    }
+    
+    @objc func handleSwipeGesture(_ sender: UISwipeGestureRecognizer) {
+        calendar.snp.makeConstraints { make in
+            //(screen.width - 68 / 3) / 7
+            make.top.equalTo(view).offset(90)
+            make.left.equalTo(view).offset(34 / 3)
+            make.right.equalTo(view).inset(34 / 3)
+            make.bottom.equalTo(header.snp.bottom).offset((calendar.getLine() + 1) * 37 + 18)
+        }
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(view).offset(calendarHeight)
+            make.left.right.equalTo(view)
+            make.height.equalTo(view)
+        }
+        UIView.animate(withDuration: 1) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -54,5 +105,14 @@ class ScheduleController: UIViewController {
             make.left.right.equalTo(view)
             make.height.equalTo(view)
         }
+        returnBtn.snp.makeConstraints { make in
+            make.top.equalTo(tableView).offset(10)
+            make.right.equalTo(tableView).inset(10)
+            make.width.height.equalTo(100)
+        }
     }
+}
+
+extension ScheduleController: UIGestureRecognizerDelegate {
+    
 }

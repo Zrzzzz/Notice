@@ -15,6 +15,9 @@ protocol STTabBarDelegate: UITabBarDelegate {
 
 class STTabBar: UITabBar, UITabBarDelegate {
     var stTabBarDelegate: STTabBarDelegate?
+    var tableview: UITableView!
+    var cellList: [String]!
+    
     fileprivate var centerButton: STTabBarCenterButton = {
         var height:CGFloat = 104
         if screen.height >= 812{
@@ -30,13 +33,33 @@ class STTabBar: UITabBar, UITabBarDelegate {
         super.init(frame: frame)
         self.backgroundColor = .white
         self.barTintColor = .white
+        initTableview()
         addCenterButton()
     }
     //添加中间按钮
     func addCenterButton(){
         self.addSubview(self.centerButton)
     }
+//MARK: - 添加栏
+    func initTableview() {
+        setCell()
+        tableview = UITableView(frame: .zero, style: .grouped)
+        tableview.delegate = self
+        tableview.dataSource = self
+        tableview.backgroundColor = TNColor.textBgc
+        tableview.layer.cornerRadius = 18
+        tableview.layer.masksToBounds = true
+        window?.addSubview(tableview)
+        tableview.snp.makeConstraints { make in
+            make.centerX.equalTo(window!)
+//            make.bottom.equalTo()
+        }
+    }
     
+    
+    func setCell() {
+        cellList = ["添加日程","添加小组","发送通知"]
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -95,4 +118,35 @@ class STTabBar: UITabBar, UITabBarDelegate {
         }
         
     }
+}
+
+extension STTabBar: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        let label = UILabel()
+        label.text = cellList[indexPath.row]
+        if indexPath.row == 0 {
+            label.textColor = TNColor.calendarBgc
+        } else {
+            label.textColor = TNColor.listTime
+        }
+        label.textAlignment = .center
+        cell.contentView.addSubview(label)
+        label.snp.makeConstraints {$0.edges.equalTo(cell.contentView)}
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0: break
+        case 1: break
+        default: break
+        }
+    }
+    
+    
 }

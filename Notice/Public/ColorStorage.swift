@@ -40,4 +40,7 @@ public struct TNColor {
     static let dateSpe = UIColor.init { trainCollection -> UIColor in
         return trainCollection.userInterfaceStyle == .dark ? UIColor(hex6: 0xFBD266): UIColor(hex6: 0xFBD266)
     }
+    static let textBgc = UIColor.init { trainCollection -> UIColor in
+        return trainCollection.userInterfaceStyle == .dark ? UIColor(hex6: 0xF7F7F7): UIColor(hex6: 0xF7F7F7)
+    }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0405C0B6243882C0009D0F3B /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0405C0B5243882C0009D0F3B /* SDWebImage.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0405C0B8243882EA009D0F3B /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0405C0B7243882EA009D0F3B /* SnapKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0430E2F9243308240012D117 /* ListTableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430E2F8243308240012D117 /* ListTableview.swift */; };
 		0430E2FB243308D80012D117 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430E2FA243308D80012D117 /* ListCell.swift */; };
 		0430E2FD243314C70012D117 /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430E2FC243314C70012D117 /* ListHeader.swift */; };
@@ -16,7 +18,7 @@
 		043F612624290F760013AEBD /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F612524290F760013AEBD /* ScheduleController.swift */; };
 		044B0AA2242F872C000E5591 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B0AA1242F872C000E5591 /* CalendarHeaderView.swift */; };
 		04CF770C242A4DFC00F13060 /* NoticeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF770B242A4DFC00F13060 /* NoticeController.swift */; };
-		04CF770E242A5D1900F13060 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04CF770D242A5D1900F13060 /* Alamofire.framework */; };
+		04CF770E242A5D1900F13060 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04CF770D242A5D1900F13060 /* Alamofire.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		04CF7710242B17B300F13060 /* CenterBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF770F242B17B300F13060 /* CenterBtnView.swift */; };
 		04CF7712242B7ED000F13060 /* TNCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF7711242B7ED000F13060 /* TNCalendar.swift */; };
 		04CF7714242B80A100F13060 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF7713242B80A100F13060 /* CalendarView.swift */; };
@@ -34,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		026B308B37AED004607BA7F2 /* Pods-Notice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notice.debug.xcconfig"; path = "Target Support Files/Pods-Notice/Pods-Notice.debug.xcconfig"; sourceTree = "<group>"; };
+		0405C0B5243882C0009D0F3B /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0405C0B7243882EA009D0F3B /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0430E2F8243308240012D117 /* ListTableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableview.swift; sourceTree = "<group>"; };
 		0430E2FA243308D80012D117 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		0430E2FC243314C70012D117 /* ListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeader.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0405C0B8243882EA009D0F3B /* SnapKit.framework in Frameworks */,
+				0405C0B6243882C0009D0F3B /* SDWebImage.framework in Frameworks */,
 				04CF770E242A5D1900F13060 /* Alamofire.framework in Frameworks */,
 				2D936F77CACC3B000E2B0055 /* Pods_Notice.framework in Frameworks */,
 			);
@@ -212,6 +218,8 @@
 		C21D06DC9EC1674A0BA3737C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0405C0B7243882EA009D0F3B /* SnapKit.framework */,
+				0405C0B5243882C0009D0F3B /* SDWebImage.framework */,
 				04CF770D242A5D1900F13060 /* Alamofire.framework */,
 				7671CC138C1BD8C3DE529719 /* Pods_Notice.framework */,
 			);
