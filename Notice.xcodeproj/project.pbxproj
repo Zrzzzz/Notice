@@ -28,10 +28,14 @@
 		D318625F240EBBFF00ADA771 /* TotalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318625E240EBBFF00ADA771 /* TotalExtension.swift */; };
 		D3645F1A240BA05F00BC12C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3645F19240BA05F00BC12C0 /* LoginViewController.swift */; };
 		D392C13424249EF0003EDFAB /* LoginText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D392C13324249EF0003EDFAB /* LoginText.swift */; };
+		D3A04C4C242F279800AB46BA /* PlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A04C4B242F279800AB46BA /* PlanModel.swift */; };
+		D3A04C50242F307B00AB46BA /* BarTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A04C4F242F307B00AB46BA /* BarTextView.swift */; };
 		D3B255B0240B9E030040AAE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B255AF240B9E030040AAE0 /* AppDelegate.swift */; };
 		D3B255B7240B9E030040AAE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B255B5240B9E030040AAE0 /* Main.storyboard */; };
 		D3B255B9240B9E040040AAE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3B255B8240B9E040040AAE0 /* Assets.xcassets */; };
 		D3B255BC240B9E040040AAE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B255BA240B9E040040AAE0 /* LaunchScreen.storyboard */; };
+		D3E34F9624388F9500993172 /* NoticeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E34F9524388F9500993172 /* NoticeHeaderView.swift */; };
+		D3E34F9824388FB800993172 /* NoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E34F9724388FB800993172 /* NoticeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,12 +62,16 @@
 		D318625E240EBBFF00ADA771 /* TotalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalExtension.swift; sourceTree = "<group>"; };
 		D3645F19240BA05F00BC12C0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D392C13324249EF0003EDFAB /* LoginText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginText.swift; sourceTree = "<group>"; };
+		D3A04C4B242F279800AB46BA /* PlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanModel.swift; sourceTree = "<group>"; };
+		D3A04C4F242F307B00AB46BA /* BarTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarTextView.swift; sourceTree = "<group>"; };
 		D3B255AC240B9E030040AAE0 /* Notice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B255AF240B9E030040AAE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3B255B6240B9E030040AAE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3B255B8240B9E040040AAE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3B255BB240B9E040040AAE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3B255BD240B9E040040AAE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3E34F9524388F9500993172 /* NoticeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeHeaderView.swift; sourceTree = "<group>"; };
+		D3E34F9724388FB800993172 /* NoticeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				D318625E240EBBFF00ADA771 /* TotalExtension.swift */,
+				D3A04C4B242F279800AB46BA /* PlanModel.swift */,
+				D3A04C4F242F307B00AB46BA /* BarTextView.swift */,
 				04F06581242DE7D800605D6F /* ColorStorage.swift */,
 			);
 			path = Public;
@@ -177,8 +187,8 @@
 		04CF7705242A4D7500F13060 /* TJUNotice */ = {
 			isa = PBXGroup;
 			children = (
-				04CF7708242A4D8F00F13060 /* Model */,
-				04CF7707242A4D8C00F13060 /* View */,
+				D3E34F9024388F5E00993172 /* View */,
+				D3E34F8F24388F5700993172 /* Model */,
 				04CF7706242A4D7E00F13060 /* Controller */,
 			);
 			path = TJUNotice;
@@ -190,20 +200,6 @@
 				04CF770B242A4DFC00F13060 /* NoticeController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		04CF7707242A4D8C00F13060 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		04CF7708242A4D8F00F13060 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		96E493416CB0AAFD9D889B9B /* Pods */ = {
@@ -290,6 +286,22 @@
 				D3645F1B240BA06700BC12C0 /* Login */,
 			);
 			path = Notice;
+			sourceTree = "<group>";
+		};
+		D3E34F8F24388F5700993172 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D3E34F9024388F5E00993172 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3E34F9724388FB800993172 /* NoticeCell.swift */,
+				D3E34F9524388F9500993172 /* NoticeHeaderView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A04C50242F307B00AB46BA /* BarTextView.swift in Sources */,
 				043F6123242907CB0013AEBD /* STTabBarCenterButton.swift in Sources */,
 				04F06582242DE7D800605D6F /* ColorStorage.swift in Sources */,
 				04CF7724242C6AA300F13060 /* CalendarCell.swift in Sources */,
@@ -416,13 +429,16 @@
 				043F6121242907BB0013AEBD /* STTabBar.swift in Sources */,
 				04CF770C242A4DFC00F13060 /* NoticeController.swift in Sources */,
 				D318625F240EBBFF00ADA771 /* TotalExtension.swift in Sources */,
+				D3A04C4C242F279800AB46BA /* PlanModel.swift in Sources */,
 				04CF7710242B17B300F13060 /* CenterBtnView.swift in Sources */,
 				D3645F1A240BA05F00BC12C0 /* LoginViewController.swift in Sources */,
+				D3E34F9624388F9500993172 /* NoticeHeaderView.swift in Sources */,
 				0430E2FB243308D80012D117 /* ListCell.swift in Sources */,
 				D3B255B0240B9E030040AAE0 /* AppDelegate.swift in Sources */,
 				043F612624290F760013AEBD /* ScheduleController.swift in Sources */,
 				0430E2F9243308240012D117 /* ListTableview.swift in Sources */,
 				044B0AA2242F872C000E5591 /* CalendarHeaderView.swift in Sources */,
+				D3E34F9824388FB800993172 /* NoticeCell.swift in Sources */,
 				0430E2FD243314C70012D117 /* ListHeader.swift in Sources */,
 				043F611F242907A60013AEBD /* STTabBarController.swift in Sources */,
 			);

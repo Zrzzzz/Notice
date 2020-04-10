@@ -18,15 +18,18 @@ class LoginSetView: UIView {
         self.init()
         self.color = color.cgColor
         
-        self.frame.size = CGSize(width: screen.width, height: 100)
-        let bar = UIView(frame: CGRect(x: 5, y: 10, width: 5, height: 28))
-        bar.setCornerRadius(radius: 2)
-        bar.backgroundColor = UIColor(cgColor: self.color)
-        self.addSubview(bar)
+//        self.frame.size = CGSize(width: screen.width, height: 100)
+//        let bar = UIView(frame: CGRect(x: 5, y: 10, width: 5, height: 28))
+//        bar.setCornerRadius(radius: 2)
+//        bar.backgroundColor = UIColor(cgColor: self.color)
+//        self.addSubview(bar)
+//
+//        let title = UILabel(frame: CGRect(x: 15, y: 0, width: screen.width - 50, height: 50))
+//        title.font = .systemFont(ofSize: 20)
+//        title.text = titleText
+//        self.addSubview(title)
         
-        let title = UILabel(frame: CGRect(x: 15, y: 0, width: screen.width - 50, height: 50))
-        title.font = .systemFont(ofSize: 20)
-        title.text = titleText
+        let title = BarTextView(barWidth: 5, text: titleText, size: 20, barColor: color)
         self.addSubview(title)
         
         textField = UITextField(frame: CGRect(x: 15, y: 35, width: 300, height: 50))

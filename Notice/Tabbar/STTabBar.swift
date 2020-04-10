@@ -50,10 +50,10 @@ class STTabBar: UITabBar, UITabBarDelegate {
         tableview.layer.cornerRadius = 18
         tableview.layer.masksToBounds = true
         window?.addSubview(tableview)
-        tableview.snp.makeConstraints { make in
-            make.centerX.equalTo(window!)
+//        tableview.snp.makeConstraints { make in
+//            make.centerX.equalTo(window!)
 //            make.bottom.equalTo()
-        }
+//        }
     }
     
     

@@ -31,8 +31,8 @@ extension UIView {
 
 extension Int {
     func timestampToDate(dateFormat: String) -> String {
-        //时间戳, 而且这个是毫秒级
-        let timeStamp = self / 1000
+        //时间戳
+        let timeStamp = self
         //转换为时间
         let timeInterval:TimeInterval = TimeInterval(timeStamp)
         let date = NSDate(timeIntervalSince1970: timeInterval)
